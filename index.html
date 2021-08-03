@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Secret message</title>
+  </head>
+  <body>
+    <div class="alert alert-danger" role="alert" style="display: none; width: 100%; text-align: center;" id="alert">
+        Wrong password! Gib kisses now!
+    </div>
+    <div class="container">
+        <h1>Enter the correct password to see secret message</h1>
+
+        <div class="form-group">
+            <label for="passwordInput">Gib Isaac kisses to get the password</label>
+            <input type="text" class="form-control" id="passwordInput" placeholder="Password">
+        </div>
+        <button onclick="submitResponse()" class="btn btn-primary" style="margin-top: 2%;">Submit</button>
+        <div id="ending" style="display: none;">
+            <iframe src="https://giphy.com/embed/JRsQiAN79bPWUv43Ko" width="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/milkmochabear-bear-milk-white-JRsQiAN79bPWUv43Ko"></a></p>
+            <h2>Baby just want kisses kekeke. Happy birthday!!!!! Muah!</h2>
+        </div>
+    </div>
+    <script>
+        function submitResponse() {
+            console.log("hello")
+            const inputValue = document.getElementById("passwordInput").value
+            if (inputValue.toLowerCase() === "baby want kisses") {
+                correctAnswer()
+            } else {
+                wrongAnswer()
+            }
+        }
+    
+        function correctAnswer () {
+            document.getElementById('ending').style.display = "block"
+        }
+    
+        function wrongAnswer () {
+            document.getElementById('alert').style.display = "block"
+        }
+    </script>
+  </body>
+
+</html>
